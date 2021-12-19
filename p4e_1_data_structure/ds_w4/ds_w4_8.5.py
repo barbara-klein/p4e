@@ -10,22 +10,14 @@
 # You can download the sample data at http://www.py4e.com/code3/mbox-short.txt
 
 # from Autograder:
-#fname = input("Enter file name: ")
-fname = 'mbox-short.txt'
-if len(fname) < 1 : fname = "mbox-short.txt"
+fname = input("Enter file name: ")
+#fname = 'mbox-short.txt'
 fh = open(fname)
 count = 0
 for line in fh:
-    if line.startswith('From:') :
-        e_address = line.split()
-        print(e_address)
-        count = count + 1
-        col_pos = line.find(':')
-        piece = line[col_pos+1:]
-        print(col_pos)
-        #print('Line count:', count)
-#    col_pos = line.find(':')
-#    piece = line[col_pos+1:]
-#    value = float(piece)
-
-#print("There were", count, "lines in the file with From as
+    if not line.startswith('From ') : continue
+    count = count + 1
+    e_lines = line.split()
+    print(e_lines[1])
+#print('Line count:', count)
+print("There were", count, "lines in the file with From as the first word")

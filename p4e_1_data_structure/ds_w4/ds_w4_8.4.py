@@ -17,18 +17,14 @@ def is_word_in(words, word):
 
 for line in fh:
     line = line.rstrip()
-    #print(line)
     words = line.split()
-    #print(words)
     for word in words:
-
-        #print(x)
         if is_word_in(outcome_words, word) == False:
             outcome_words.append(word)
 outcome_words.sort()
 print(outcome_words)
 
-#or:
+#or without function:
 #fname = input("Enter file name: ")
 #fh = open(fname)
 #outcome_words = list()
